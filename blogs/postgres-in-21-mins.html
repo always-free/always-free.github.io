@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>PostgreSQL in 21 minutes | Always Free</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons">
+    <script async="true" src="https://www.googletagmanager.com/gtag/js?id=G-Z07G62F81Y"></script>
+    <script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-Z07G62F81Y', { 'anonymize_ip': true });
+router.afterEach(function (to) {
+gtag('set', 'page', router.app.$withBase(to.fullPath))
+gtag('send', 'pageview')
+})
+</script>
+    <meta name="description" content="Quick refresher on PostgreSQL along with hands-on">
+    
+    <link rel="preload" href="/assets/css/0.styles.c58222f2.css" as="style"><link rel="preload" href="/assets/js/app.036d0ac1.js" as="script"><link rel="preload" href="/assets/js/2.7b2e9ab2.js" as="script"><link rel="preload" href="/assets/js/10.ba714f38.js" as="script"><link rel="prefetch" href="/assets/js/11.4ae69dfd.js"><link rel="prefetch" href="/assets/js/12.d418bb0f.js"><link rel="prefetch" href="/assets/js/13.8a2d0a48.js"><link rel="prefetch" href="/assets/js/14.588bd741.js"><link rel="prefetch" href="/assets/js/15.5382bd53.js"><link rel="prefetch" href="/assets/js/16.b829870b.js"><link rel="prefetch" href="/assets/js/17.c717e181.js"><link rel="prefetch" href="/assets/js/18.6d336adf.js"><link rel="prefetch" href="/assets/js/19.b475e50f.js"><link rel="prefetch" href="/assets/js/20.97f8f751.js"><link rel="prefetch" href="/assets/js/21.6372831f.js"><link rel="prefetch" href="/assets/js/3.ba01127c.js"><link rel="prefetch" href="/assets/js/4.bbc8134c.js"><link rel="prefetch" href="/assets/js/5.5221b251.js"><link rel="prefetch" href="/assets/js/6.2bcf4749.js"><link rel="prefetch" href="/assets/js/7.1dc15da0.js"><link rel="prefetch" href="/assets/js/8.b40c492a.js"><link rel="prefetch" href="/assets/js/9.2b12dd3f.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.c58222f2.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Always Free</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/apps/" class="nav-link">
+  Apps
+</a></div><div class="nav-item"><a href="/servers/" class="nav-link">
+  Servers
+</a></div><div class="nav-item"><a href="/cloud/" class="nav-link">
+  Cloud
+</a></div><div class="nav-item"><a href="/blogs/" class="nav-link router-link-active">
+  Blogs
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/apps/" class="nav-link">
+  Apps
+</a></div><div class="nav-item"><a href="/servers/" class="nav-link">
+  Servers
+</a></div><div class="nav-item"><a href="/cloud/" class="nav-link">
+  Cloud
+</a></div><div class="nav-item"><a href="/blogs/" class="nav-link router-link-active">
+  Blogs
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>PostgreSQL in 21 minutes</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blogs/postgres-in-21-mins.html#cli-commands" class="sidebar-link">CLI Commands</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="posgresql-in-21-minutes"><a href="#posgresql-in-21-minutes" class="header-anchor">#</a> PosgreSQL in 21 Minutes</h1> <h2 id="cli-commands"><a href="#cli-commands" class="header-anchor">#</a> CLI Commands</h2> <div class="language-sql line-numbers-mode"><pre class="language-sql"><code><span class="token comment">-- Clear screen</span>
+\<span class="token operator">!</span> clear
+
+<span class="token comment">-- Expanded mode</span>
+\x
+\x <span class="token keyword">off</span>
+
+<span class="token comment">-- List all databases</span>
+\l
+
+<span class="token comment">-- List of extensions</span>
+\dx
+
+<span class="token comment">-- Connect to database</span>
+\c dbname 
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><h1 id="managing-tables"><a href="#managing-tables" class="header-anchor">#</a> Managing Tables</h1> <div class="language-sql line-numbers-mode"><pre class="language-sql"><code><span class="token comment">-- List all tables</span>
+\d
+
+<span class="token comment">-- Create a table</span>
+<span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> <span class="token keyword">IF</span> <span class="token operator">NOT</span> <span class="token keyword">EXISTS</span> users <span class="token punctuation">(</span>
+ id <span class="token keyword">INT</span> GENERATED ALWAYS <span class="token keyword">AS</span> <span class="token keyword">IDENTITY</span>
+ <span class="token punctuation">,</span> username <span class="token keyword">TEXT</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span>
+ <span class="token punctuation">,</span> email <span class="token keyword">TEXT</span>
+ <span class="token punctuation">,</span> <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span><span class="token punctuation">(</span> id <span class="token punctuation">)</span>
+ <span class="token punctuation">,</span> <span class="token keyword">UNIQUE</span> <span class="token punctuation">(</span> username <span class="token punctuation">)</span>
+ <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">-- List of relations</span>
+<span class="token comment">-- -[ RECORD 1 ]----------</span>
+<span class="token comment">-- Schema | public</span>
+<span class="token comment">-- Name   | users</span>
+<span class="token comment">-- Type   | table</span>
+<span class="token comment">-- Owner  | swfqxxbylopjvu</span>
+<span class="token comment">-- -[ RECORD 2 ]----------</span>
+<span class="token comment">-- Schema | public</span>
+<span class="token comment">-- Name   | users_id_seq</span>
+<span class="token comment">-- Type   | sequence</span>
+<span class="token comment">-- Owner  | swfqxxbylopjvu</span>
+
+<span class="token comment">-- Describe a table</span>
+\d users
+
+<span class="token comment">-- Insert a row</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> users <span class="token punctuation">(</span>username<span class="token punctuation">,</span> email<span class="token punctuation">)</span> <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token string">'myusername'</span><span class="token punctuation">,</span> <span class="token string">'myemail'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">-- Select a table</span>
+<span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> users<span class="token punctuation">;</span>
+
+<span class="token comment">-- Create a temp table</span>
+<span class="token keyword">CREATE</span> <span class="token keyword">TEMP</span> <span class="token keyword">TABLE</span> temp_users <span class="token keyword">AS</span> <span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> users<span class="token punctuation">;</span>
+
+<span class="token comment">-- Drop table</span>
+<span class="token keyword">DROP</span> <span class="token keyword">TABLE</span> <span class="token keyword">IF</span> <span class="token keyword">EXISTS</span> users<span class="token punctuation">;</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br></div></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">5/6/2021, 8:59:05 PM</span></div></footer> <!----> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.036d0ac1.js" defer></script><script src="/assets/js/2.7b2e9ab2.js" defer></script><script src="/assets/js/10.ba714f38.js" defer></script>
+  </body>
+</html>
